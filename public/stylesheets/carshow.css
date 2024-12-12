@@ -24,7 +24,9 @@ body {
 .header {
     background-color: #27ae60;
     color: white;
-    padding: 10px;
+    padding: 15px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     font-size: 18px;
     font-weight: bold;
 }
@@ -42,8 +44,8 @@ body {
 
 .price-tag {
     position: absolute;
-    top: 50px;
-    left: 10px;
+    top: 65px;
+    left: 8px;
     background-color: #0abc0a;
     color: white;
     padding: 10px 15px;
@@ -79,6 +81,12 @@ body {
 .contact-info {
     margin-top: 15px;
     margin-bottom: 25px;
+}
+
+.contact-info i{
+    font-size: 18px;
+    color: orange;
+    padding-right: 5px;
 }
 
 .location p {
@@ -290,10 +298,24 @@ body {
     color: #222;
 }
 
+.car-details-2 p {
+    margin-top: -4px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+    padding-top: 10px;
+    padding-bottom: 3px;
+}
+
 .pricer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.pricer i{
+    font-size: 24px;
+    color: #777;
 }
 
 .pricer strong {
@@ -349,7 +371,7 @@ body {
     justify-content: space-between;
 }
 
-.form-container .inputs{
+.form-container .inputs {
     gap: 5px;
     display: flex;
     justify-content: center;
@@ -379,7 +401,7 @@ body {
     margin: 10px 0 5px;
 }
 
-.seller-info i{
+.seller-info i {
     font-size: 1.6rem;
     color: #0abc0a;
 }
@@ -399,14 +421,19 @@ body {
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow */
-    transition: all 0.3s ease-in-out; /* Add transition for smooth hover effect */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Add box shadow */
+    transition: all 0.3s ease-in-out;
+    /* Add transition for smooth hover effect */
 }
 
 .seller-info button:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
-    transform: translateY(-2px); /* Add slight lift on hover */
+    background-color: #f0f0f0;
+    /* Change background color on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Increase box shadow on hover */
+    transform: translateY(-2px);
+    /* Add slight lift on hover */
 }
 
 .form-container {
@@ -415,16 +442,16 @@ body {
     width: 60%;
 }
 
-.form-container .input-1{
+.form-container .input-1 {
     margin-left: 7px;
 }
 
-.form-container .input-1 label{
+.form-container .input-1 label {
     font-weight: bold;
     color: #555;
 }
 
-.form-container h2{
+.form-container h2 {
     margin-top: -6px;
     font-size: 1.2rem;
     color: #555;
@@ -458,7 +485,6 @@ body {
 .form-container .policy input {
     margin-top: 15px;
     margin-right: 5px;
-    color: #0abc0a;
 }
 
 .form-container button {
@@ -478,3 +504,107 @@ body {
 }
 
 /* Search Results */
+.search-results {
+    width: 70%;
+    border-top: 6px solid #0abc0a;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 120px auto;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Adjust values as needed */
+}
+
+
+.search-results-header {
+    flex: 0 0 auto;
+    /* Prevents flexbox from resizing it */
+    align-self: stretch;
+    /* Ensures it spans the full width (optional) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.search-results-header p {
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #333;
+    margin-left: 80px;
+}
+
+.arrows {
+    display: flex;
+    margin-right: 93px;
+    margin-top: 12px;
+}
+
+.arrow {
+    font-size: 25px;
+    cursor: pointer;
+    margin: 0 5px;
+    display: inline-flex;
+    /* Ensures the text inside is centered */
+    justify-content: center;
+    /* Centers the content horizontally */
+    align-items: center;
+    /* Centers the content vertically */
+    width: 45px;
+    /* Set a fixed width for the circle */
+    height: 45px;
+    /* Match height to width to form a circle */
+    border-radius: 50%;
+    /* Makes it a perfect circle */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Adds a shadow */
+    background-color: #f0f0f0;
+    /* Optional: Add a background color */
+    transition: transform 0.2s ease;
+    /* Optional: Adds a hover effect */
+}
+
+/* Optional: Add a hover effect */
+.arrow:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge the arrow on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    /* Make shadow more prominent on hover */
+}
+
+.car-listings {
+    display: flex;
+}
+
+.car-listing {
+    width: 270px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.car-image {
+    position: relative;
+}
+
+.car-image img {
+    width: 100%;
+    height: 170px;
+}
+
+.special {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #0abc0a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.car-details h3 {
+    font-weight: bold;
+    color: #444;
+}

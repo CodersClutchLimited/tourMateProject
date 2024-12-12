@@ -126,8 +126,9 @@ main{
     cursor: pointer;
     border-radius: 50%;
     border: 1px solid #bcb8b1;
-    width: 33px;
-    height: 33px;
+    width: 45px;
+    height: 45px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,7 +182,7 @@ main{
 .category-item {
     display: inline-block;
     padding: 8px 13px;
-    font-size: 12.3px;
+    font-size: 15px;
     color: #444;
     text-align: center;
     white-space: nowrap;
@@ -208,18 +209,19 @@ main{
 
 .category-item:hover {
     color: #000;
-    border-bottom: 2px solid #c0c0c0;
+    border-bottom: 2px solid #666;
 }
 
 
 .category-item.selected {
-    color: #000;
-    border-bottom: 2px solid #c0c0c0;
+    color: #111;
+    border-bottom: 2px solid #666;
 }
 
 .show-map-container {
     position: fixed;
-    bottom: 40px;
+    /* bottom: 40px; */
+    bottom: 6%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -236,8 +238,8 @@ main{
 .show-map-button {
     background-color: #222;
     color: #fff;
-    padding: 11px 15px;
-    font-size: 15px;
+    padding: 17px 22px;
+    font-size: 18px;
     border: none;
     border-radius: 33px;
     cursor: pointer;
@@ -260,8 +262,8 @@ main{
     right: 23px;
     background-color: #0070e0;
     color: white;
-    width: 55px;
-    height: 55px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -276,7 +278,7 @@ main{
 }
 
 .message-icon i{
-    font-size: 2rem;
+    font-size: 2.6rem;
 }
 
 .message-icon:hover {
@@ -291,6 +293,8 @@ main{
 .search-bar-container {
     display: flex;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin: 18px 0;
     margin-bottom: 8px !important;
     /* margin-top: 150px !important; */
@@ -328,24 +332,24 @@ main{
 .bar{
     height: 38px;
     display: flex;
-    padding: 22px 12px;
+    padding: 26px 18px;
     background-color: #fff;
     border-radius: 30px;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
 .bar:hover input{
-    width: 300px;
+    width: 330px;
 }
 
 .bar input{
-    width: 280px;
+    width: 310px;
     outline: none;
     border: none !important;
     cursor: pointer;
     font-weight: 500;
+    font-size: 1.1rem;
     transition: 0.8s;
     background: transparent;
 }
@@ -353,7 +357,7 @@ main{
 
 .bar a .fas{
     color: var(--main-color);
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .campground-listings {
@@ -443,7 +447,7 @@ main{
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 20px;
+    font-size: 24px;
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -451,7 +455,7 @@ main{
 }
 
 .favorite-icon .fas.fa-heart {
-    font-size: 20px;
+    font-size: 24px;
     -webkit-text-stroke: 1px white;
 }
 
@@ -468,8 +472,8 @@ main{
     border: none;
     cursor: pointer;
     border-radius: 50%; /* Circular shape */
-    width: 30px; /* Fixed width */
-    height: 30px; /* Fixed height */
+    width: 42px; /* Fixed width */
+    height: 42px; /* Fixed height */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     display: flex;
     align-items: center;
@@ -477,6 +481,7 @@ main{
     transition: background-color 0.3s ease, opacity 0.3s ease;
     padding: 0; /* Remove padding */
     opacity: 0;
+    font-size: 1.3rem;
     visibility: hidden;
 }
 
@@ -516,8 +521,8 @@ main{
 
 .dot {
     display: inline-block;
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
     margin: 0 5px;
     background-color: #ddd;
     border-radius: 50%;
@@ -528,8 +533,8 @@ main{
 
 .dot.active, .dot:hover {
     background-color: #717171;
-    width: 6.8px;
-    height: 6.8px;
+    width: 7.8px;
+    height: 7.8px;
     transition: background-color 0.3s ease;
 }
 
@@ -557,21 +562,22 @@ main{
 
 .campground-details .campground-location {
     font-family: 'Helvetica Neue', Arial, sans-serif !important;
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: 400;
-    color: black;
+    color: #111;
     margin: 0;
 }
 
 
 .rating {
-    font-size: 1.3em;
+    font-size: 1.7em;
+    padding-right: 3px;
     color: gold;
 }
 
 
 .rating-number {
-    font-size: 0.78em;
+    font-size: 0.79em;
     color: black;
     font-family: 'Helvetica Neue', Arial, sans-serif; /* Clean, modern font */
 }
@@ -579,7 +585,7 @@ main{
 
 .campground-host {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1em; /* Standard font size */
+    font-size: 1.2em; /* Standard font size */
     font-weight: 400;
     color: #6c757d; /* Soft grey color, similar to Airbnb's design */
     margin: 0 0 0px; /* No extra margin for closer proximity */
@@ -588,7 +594,7 @@ main{
 
 .listed-time {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: .98em; /* Standard font size */
+    font-size: 1.2em; /* Standard font size */
     font-weight: 400;
     color: #6c757d; /* Soft grey color, similar to Airbnb's design */
     margin: 0 0 0px; /* No extra margin for closer proximity */
@@ -596,13 +602,13 @@ main{
 }
 
 .listed-time span{
-    font-size: .8em;
+    font-size: .85em;
 }
 
 
 .campground-price {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: 400;
     color: black;
     margin: 0;

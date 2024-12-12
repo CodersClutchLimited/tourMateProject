@@ -182,7 +182,7 @@ input[type="text"] {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   /* 2 columns of equal width */
-  width: 80%;
+  width: 70%;
   /* Occupy 60% of the parent container */
   /* background-color: #ffffff; */
   gap: 150px;
@@ -258,13 +258,23 @@ input[type="text"] {
   border-bottom: 1px dashed grey;
   margin-right: 30px !important;
   cursor: pointer;
+  font-size: 17px;
 }
 
 .browser .smally {
   border-bottom: 1px dashed grey;
   margin-right: 87px !important;
   cursor: pointer;
+  font-size: 17px;
 }
+.section-title-1{
+  padding-left: 97px;
+}
+
+.section-title-2{
+  padding-right: 97px;
+}
+
 
 .browser .smallo:hover,
 .browser .smally:hover {
@@ -303,6 +313,17 @@ input[type="text"] {
   padding-bottom: 50px;
   margin-bottom: 70px;
 }
+
+/* .swiper-container {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+} */
+
 
 .car-container-2 {
   display: flex;
@@ -371,6 +392,7 @@ input[type="text"] {
   padding: 20px;
   padding-bottom: 70px;
   border-bottom: 1px solid #d8dad3;
+  overflow: hidden;
 }
 
 .container-3 {
@@ -389,11 +411,15 @@ input[type="text"] {
   margin-bottom: 20px;
 }
 
-.tabs {
+.car-container .tabs, .car-container-2 .tabs {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  margin-right: 84px;
+  margin-right: 167px;
+}
+
+.car-titler{
+  margin-left: 88px;
 }
 
 .tab {
@@ -402,20 +428,18 @@ input[type="text"] {
   padding: 5px 10px;
   margin: 0 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 17px;
   border-radius: 5px;
+}
+
+.car-container-2 .tab{
+  font-size: 17px;
 }
 
 .tab.active {
   background-color: #32cd32;
   color: #fff;
   border-radius: 5px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
 }
 
 /* .cards-3 {
@@ -671,4 +695,40 @@ padding-right: 5px;
 
 .browser-button .tab.active{
   background-color: #1e38ea;
+}
+
+/* swiper js carousel arrows visibility */
+.swiper-button-next, .swiper-button-prev {
+  color: #222;
+  position: absolute;
+  margin-top: -80px !important;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.swiper-container {
+  position: relative;
 }
