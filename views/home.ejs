@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenBS</title>
+    <link rel="stylesheet" href="/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/homeNavbar.css">
+    <link crossorigin="anonymous" rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/homeFooter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+    <header class="nav-header">
+        <a href="/" class="logo text-white font-bold text-3xl">TourMate</a>
+
+        <div class="premium">
+            <a href="#"><i class="fa-solid fa-crown"></i> GO PRO</a>
+        </div>
+
+        <ul class="navbar">
+            <li><a href="/campgrounds/new"><i class="ri-home-5-line"></i> Add a property</a></li>
+            <li><a href="#"><i class="ri-customer-service-2-line"></i> Support</a></li>
+            <li class="droplist" id="dropdown">
+                <span class="country">CTR</span> |
+                <span class="language">LAN</span> |
+                <span class="currency">CUR</span>
+                <span><i class="ri-arrow-drop-down-line"></i></span>
+
+                <div class="mega-menu" id="megaMenu">
+                    <label for="countrySelect">Select Country:</label>
+                    <select id="countrySelect">
+                        <option value="The Gambia">The Gambia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Mali">Mali</option>
+                    </select>
+
+                    <label>Select Language:</label>
+                    <label><input type="radio" name="language" value="ENG"> ENG</label>
+                    <label><input type="radio" name="language" value="FRA"> FRA</label>
+
+                    <label>Select Currency:</label>
+                    <label><input type="radio" name="currency" value="CFA"> CFA</label>
+                    <label><input type="radio" name="currency" value="GMD"> GMD</label>
+                </div>
+            </li>
+        </ul>
+
+        <div class="main">
+            <% if(!currentUser) { %>
+                <a href="/login" title="Login" class="tooltip-link">
+                    <i class="ri-login-box-line"></i>
+                </a>
+                <a href="/signup" title="Signup" class="tooltip-link"><i class="fa-solid fa-user-plus"></i></a>
+                <% } else {%>
+                    <a href="/logout" class="logout tooltip-link" title="Logout"><i class="ri-logout-box-line"></i></a>
+                    <a href="#"><img src="/images/ousainou.jpg" alt="Profile" class="profile-icon"></a>
+                    <% } %>
+                        <i class="ri-menu-line" id="menu-icon"></i>
+        </div>
+    </header>
+    <div class="relative hero-container">
+
+        <!-- Video Background -->
+        <video autoplay muted loop>
+            <source src="/videos/estatevid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="z-20 button-outer flex justify-center">
+            <a href="#offer-header" class="text-lg font-bold">SPECIAL OFFERS</a>
+        </div>
+    
+        <!-- <div class="absolute inset-0 bg-black bg-opacity-50"></div> -->
+
+        <div class="relative z-10 flex items-center justify-center h-full">
+            <div class="hero-box bg-white p-8-lg grid grid-cols-4 gap-2">
+                <!-- Column 1 -->
+                <a href="/campgrounds" class="hero-div hero-div-1 border border-gray-300 flex flex-col items-center justify-center w-64 h-96 p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="icon mb-4">
+                        <img src="/images/staysgif.gif" alt="">
+                    </div>
+                    <div class="cta text-lg">Stays</div>
+                </a>
+            
+                <!-- Column 2 -->
+                <a href="/cars" class="hero-div border border-gray-300 flex flex-col items-center justify-center w-64 h-96 p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="icon mb-4">
+                        <img src="/images/supercargif.gif" alt="houses">
+                    </div>
+                    <div class="cta text-lg">Ride</div>
+                </a>
+            
+                <!-- Column 3 -->
+                <a href="tours" class="hero-div border border-gray-300 flex flex-col items-center justify-center w-64 h-96 p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="icon mb-4">
+                        <img src="/images/tourgif.gif" alt="supercar">
+                    </div>
+                    <p class="text-lg">Tour Guide</p>
+                </a>
+            
+                <!-- Column 4 -->
+                <a href="/shops" class="hero-div hero-div-2 border border-gray-300 flex flex-col items-center justify-center w-64 h-96 p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="icon mb-4">
+                        <img src="/images/cartgif.gif" alt="shoppingcart">
+                    </div>
+                    <p class="text-lg">Shop Africa</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="holiday-outer flex justify-center">
+            <div class="overflow-hidden holiday grid grid-cols-3">
+                <div class="holiday-div-1 flex">
+                    <div class="holiday-icon flex">
+                        <i class="ri-shopping-bag-3-line"></i>
+                    </div>
+                    <div class="flex flex-col holiday-title">
+                        <h1 class="holiday-title font-bold">Holiday Escape</h1>
+                        <p class="holiday-para">Experience a new destination at an affordable price</p>
+                    </div>
+                </div>
+
+                <div class="holiday-div-2 flex">
+                    <div class="holiday-icon flex">
+                        <i class="ri-shopping-bag-3-line"></i>
+                    </div>
+                    <div class="flex flex-col holiday-title">
+                        <h1 class="holiday-title font-bold">Holiday Escape</h1>
+                        <p class="holiday-para">Experience a new destination at an affordable price</p>
+                    </div>
+                </div>
+
+                <div class="holiday-div-3 flex">
+                    <div class="holiday-icon flex">
+                        <i class="ri-shopping-bag-3-line"></i>
+                    </div>
+                    <div class="flex flex-col holiday-title">
+                        <h1 class="holiday-title font-bold">Holiday Escape</h1>
+                        <p class="holiday-para">Experience a new destination at an affordable price</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="button-outer flex justify-center">
+            <button class=-lg">Special offers</button>
+        </div> -->
+    </div>
+
+    <!-- fero secton -->
+     
+
+    <div class="offer-container-outer">
+        <div class="offer-container max-w-6xl mx-auto p-5">
+            <!-- Header -->
+            <div id="offer-header" class="offer-header flex justify-between">
+                <h1 class="text-3xl font-bold mb-5 offer-text">Explore Hotel in Trending Destinations</h1>
+                <!-- Tab Navigation -->
+                <div class="flex items-center justify-between border-b mb-5 relative">
+                    <!-- Custom Navigation Buttons -->
+                    <div class="absolute top-0 right-0 flex space-x-2">
+                        <button id="custom-prev" class="shadow-lg flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-angle-left text-gray-500 text-lg"></i>
+                        </button>
+                        <button id="custom-next" class="shadow-lg flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-angle-right text-gray-500 text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swiper Container -->
+            <div class="overflow-hidden swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide bg-white p-4">
+                        <div class="image-container">
+                            <img src="/images/h4.jpg" alt="" class="image-card">
+                            <div class="image-title">Beautiful Beach</div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide bg-white p-4">
+                        <div class="image-container">
+                            <img src="/images/H1.jpg" alt="" class="image-card">
+                            <div class="image-title">Beautiful Beach</div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide bg-white p-4">
+                        <div class="image-container">
+                            <img src="/images/h8.jpg" alt="" class="image-card">
+                            <div class="image-title">Beautiful Beach</div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide bg-white p-4">
+                        <div class="image-container">
+                            <img src="/images/h10.jpg" alt="" class="image-card">
+                            <div class="image-title">Beautiful Beach</div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide bg-white p-4">
+                        <div class="image-container">
+                            <img src="/images/h11.jpg" alt="" class="image-card">
+                            <div class="image-title">Beautiful Beach</div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6  -->
+                    <div class="swiper-slide bg-white p-4">
+                        <div class="image-container">
+                            <img src="/images/h8.jpg" alt="" class="image-card">
+                            <div class="image-title">Beautiful Beach</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper and Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="/javascripts/homeNavbar.js"></script>
+    <script src="/javascripts/home.js"></script>
+</body>
+
+</html>

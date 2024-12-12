@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just testing</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .parallax {
+            position: relative;
+            height: 100vh;
+            /* Full viewport height */
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230703/pngtree-sleek-futuristic-car-in-a-vibrant-neon-metropolis-of-the-future-image_3756103.jpg');
+            /* Replace with your image */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            /* Transparent background */
+            border-radius: 10px;
+        }
+
+        .regular-section {
+            height: 100vh;
+            /* Full viewport height */
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax">
+        <div class="content">
+            <h1>Welcome to My Website</h1>
+            <p>Scroll down to see the effect!</p>
+        </div>
+    </div>
+    <div class="regular-section">
+        <p>Here’s some more content below the parallax section.</p>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const parallax = document.querySelector('.parallax');
+            let offset = window.pageYOffset;
+            parallax.style.backgroundPositionY = offset * 0.7 + 'px'; // Adjust the speed
+        });
+
+    </script>
+</body>
+
+</html>

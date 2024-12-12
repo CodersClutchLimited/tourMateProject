@@ -1,0 +1,149 @@
+<% layout('layouts/boilerplate') %>
+
+<!-- Categories Section -->
+<div class="categories-container">
+    <button class="categories-prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="categories-wrapper">
+        <div class="categories">
+            <%
+                const categories = [
+                    { name: 'All', icon: 'fa-list' },
+                    { name: 'Apartments', icon: 'fa-building' },
+                    { name: 'Houses', icon: 'fa-home' },
+                    { name: 'Condos', icon: 'fa-warehouse' },
+                    { name: 'Studios', icon: 'fa-microphone-lines' },
+                    { name: 'Townhouses', icon: 'fa-house-user' },
+                    { name: 'Lofts', icon: 'fa-building' },
+                    { name: 'Duplexes', icon: 'fa-home' },
+                    { name: 'Penthouses', icon: 'fa-building' },
+                    { name: 'Villas', icon: 'fa-home' },
+                    { name: 'Cabins', icon: 'fa-house-laptop' },
+                    { name: 'Cottages', icon: 'fa-house-flood-water' },
+                    { name: 'Homes', icon: 'fa-home' },
+                    { name: 'Mansions', icon: 'fa-home' },
+                    { name: 'Farms', icon: 'fa-tractor' },
+                    { name: 'Land', icon: 'fa-map-marker-alt' },
+                    { name: 'Offices', icon: 'fa-briefcase' },
+                    { name: 'Retail Spaces', icon: 'fa-store' },
+                    { name: 'Warehouses', icon: 'fa-box' },
+                    { name: 'Garages', icon: 'fa-warehouse' },
+                    { name: 'Events', icon: 'fa-calendar-alt' },
+                    { name: 'Luxury Rentals', icon: 'fa-star' },
+                    { name: 'Vacation Rentals', icon: 'fa-sun' },
+                    { name: 'Short-Term Rentals', icon: 'fa-clock' },
+                    { name: 'Long-Term Rentals', icon: 'fa-calendar' },
+                    { name: 'Pet-Friendly Rentals', icon: 'fa-paw' },
+                    { name: 'Senior Living', icon: 'fa-users' },
+                    { name: 'Student Housing', icon: 'fa-graduation-cap' },
+                    { name: 'Commercial Properties', icon: 'fa-building' },
+                    { name: 'Mixed-Use Properties', icon: 'fa-th-large' },
+                    { name: 'Investment Properties', icon: 'fa-chart-line' },
+                    { name: 'New Constructions', icon: 'fa-tools' },
+                    { name: 'Historic Homes', icon: 'fa-landmark' },
+                    { name: 'Furnished Rentals', icon: 'fa-couch' },
+                    { name: 'Unfurnished Rentals', icon: 'fa-bed' },
+                    { name: 'Shared Housing', icon: 'fa-users' },
+                    { name: 'Sublets', icon: 'fa-people-arrows' },
+                    { name: 'Room Rentals', icon: 'fa-door-open' },
+                    { name: 'Retirement Communities', icon: 'fa-hospital' }
+                ];
+            %>
+            <% categories.forEach(category => { %>
+                <div class="category-item" data-category="<%= category.name %>">
+                    <i class="fas <%= category.icon %>"></i>
+                    <span><%= category.name %></span>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    <button class="categories-next"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+<!-- Show Map Button -->
+<div class="show-map-container">
+    <button class="show-map-button">Show map <i class="fa-solid fa-map"></i></button>
+</div>
+
+<!-- Message Icon -->
+<div class="message-icon">
+    <i class="ri-chat-smile-2-fill"></i>
+</div>
+
+<!-- search bar -->
+<div class="search-bar-container">
+    <div class="bar">
+        <input type="search" placeholder="Search Properties">
+        <a href="#">
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Campground Listings -->
+<div id="campground-listings" class="campground-listings">
+    <% for (let campground of campgrounds) { %>
+        <a href="/campgrounds/<%= campground._id %>" class="campground-card" data-category="<%= campground.category %>">
+            <% if (campground.images.length) { %>
+                <% 
+                    const limitedImages = campground.images.slice(0, 5);
+                %>
+                <div class="carousel">
+                    <div class="carousel-images">
+                        <% for (let image of limitedImages) { %>
+                            <div class="carousel-slide">
+                                <img src="<%= image.url %>" alt="Campground Image" class="Campground Image">
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="favorite-icon">
+                        <i class="fas fa-heart heart-background"></i>
+                    </div>
+                    <div class="carousel-buttons">
+                        <button class="carousel-prev prevent-click">&#10094;</button>
+                        <button class="carousel-next prevent-click">&#10095;</button>
+                    </div>
+                    <div class="carousel-dots">
+                        <% for (let i = 0; i < limitedImages.length; i++) { %>
+                            <span class="dot prevent-click"></span>
+                        <% } %>
+                    </div>
+                </div>
+            <% } else { %>
+                <img crossorigin="anonymous" class="campground-image" alt=""
+                    src="https://www.elacampground.com/wp-content/uploads/2019/06/Ela-Campground-87.jpg">
+            <% } %>
+            <div class="campground-details">
+                <div class="location-rating-container">
+                    <p class="campground-location"><%= campground.location %></p>
+                    <span class="rating">★<span class="rating-number"><%= campground.averageRating %></span></span>
+                </div>
+                <p class="campground-host">Posted by <%= campground.author.username %></p>
+                <p class="campground-price"> D<%= campground.price %> <span class="night-text">night</span></p>
+                <p class="listed-time" id="listed-time-<%= campground._id %>">Listed <span>• <%= formatTimeDifference(campground.createdAt) %></span></p>
+            </div>
+        </a>
+    <% } %>
+</div>
+
+<!-- No uploads message -->
+<div id="no-uploads" class="no-uploads" style="display: none;">
+    <div class="no-uploads-content">
+        <img src="/images/nothingFound2.png">
+        <p class="no-uploads-description">It looks like there are no properties available at the moment. Check back later or try a different category.</p>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="/javascripts/category.js"></script>
+<script src="/javascripts/filter.js"></script>
+<script src="/javascripts/updateTime.js"></script>
+<script>
+    const campgrounds = <%- JSON.stringify(campgrounds) %>;
+    startUpdatingTimes(campgrounds);
+</script>
+<script src="/javascripts/searchBarVisibility.js"></script>
+<script src="/javascripts/carousel.js"></script>
+<script src="/javascripts/carouselArrowClick.js"></script>
+<script src="/javascripts/favorite.js"></script>
+<script src="/javascripts/showMapIcon.js"></script>
+<script src="/javascripts/showMessageIcon.js"></script>

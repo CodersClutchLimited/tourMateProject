@@ -1,0 +1,101 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">Edit Campground</h1>
+    <div class="col-6 offset-3">
+        <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <!-- Title -->
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input value="<%=campground.title%>" class="form-control" type="text" id="title" name="campground[title]" required>
+            </div>
+
+            <!-- Location -->
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input value="<%=campground.location%>" class="form-control" type="text" id="location" name="campground[location]" required>
+            </div>
+
+            <!-- Price -->
+            <div class="mb-3">
+                <label class="form-label" for="price">Campground Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input value="<%=campground.price%>" type="text" class="form-control" placeholder="0.00" aria-label="price" aria-describedby="price-label" name="campground[price]" required>
+                </div>
+            </div>
+
+            <!-- Category -->
+            <div class="mb-3">
+                <label class="form-label" for="category">Category</label>
+                <select class="form-select" id="category" name="campground[category]" required>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category %>" <%= campground.category === category ? 'selected' : '' %>><%= category %></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="campground[description]" required><%=campground.description%></textarea>
+            </div>
+
+            <!-- Number of Guests -->
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <input value="<%=campground.guests%>" type="number" class="form-control" id="guests" name="campground[guests]" required>
+            </div>
+
+            <!-- Number of Bedrooms -->
+            <div class="form-group">
+                <label for="bedrooms">Number of Bedrooms</label>
+                <input value="<%=campground.bedrooms%>" type="number" class="form-control" id="bedrooms" name="campground[bedrooms]" required>
+            </div>
+
+            <!-- Number of Beds -->
+            <div class="form-group">
+                <label for="beds">Number of Beds</label>
+                <input value="<%=campground.beds%>" type="number" class="form-control" id="beds" name="campground[beds]" required>
+            </div>
+
+            <!-- Number of Bathrooms -->
+            <div class="form-group">
+                <label for="bathrooms">Number of Bathrooms</label>
+                <input value="<%=campground.bathrooms%>" type="number" class="form-control" id="bathrooms" name="campground[bathrooms]" required>
+            </div>
+
+            <!-- Amenities -->
+            <div class="form-group">
+                <label for="amenities">Amenities</label>
+                <div>
+                    <% ['Wi-Fi', 'Parking', 'Pets Allowed', 'Swimming Pool', 'Air Conditioning', 'Laundry', 'BBQ Area', 'Fire Pits', 'Hot Tub', 'Gym', 'Electric Hookups', 'Water Hookups', 'Showers', 'Bathrooms', 'Picnic Area', 'Playground'].forEach(amenity => { %>
+                        <input type="checkbox" name="campground[amenities][]" value="<%= amenity %>" id="<%= amenity.toLowerCase().replace(/\s+/g, '-') %>" <%= campground.amenities.includes(amenity) ? 'checked' : '' %>> <%= amenity %><br>
+                    <% }) %>
+                </div>
+            </div>
+
+            <!-- Add More Images -->
+            <div class="mb-3">
+                <label class="form-label" for="image">Add more images</label>
+                <input type="file" class="form-control" id="image" name="image" multiple>
+            </div>
+
+            <!-- Existing Images -->
+            <div class="mb-3">
+                <% campground.images.forEach(function(img, i){ %>
+                    <img src="<%= img.thumbnail %>" alt="" class="img-thumbnail">
+                    <div class="form-check-inline">
+                        <input type="checkbox" id="image-<%= i %>" name="deleteImages[]" value="<%= img.filename %>">
+                    </div>
+                    <label for="image-<%= i %>">Delete?</label>
+                <% }) %>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mb-3">
+                <button class="btn btn-info">Update Campground</button>
+            </div>
+        </form>
+        <a href="/campgrounds/<%=campground._id%>"><b>Back To Campground</b></a>
+    </div>
+</div>

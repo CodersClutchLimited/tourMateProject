@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Guide</title>
+    <link rel="stylesheet" href="/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/tour.css" crossorigin="anonymous">
+    <style>
+        body {
+            background: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .rcontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 640px;
+            position: relative;
+        }
+        .background-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .search-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .search-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 15px;
+        }
+        .search-item span:first-child {
+            color: #6B7280;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .search-item span:last-child {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .search-item:not(:last-child) {
+            border-right: 1px solid #E5E7EB;
+        }
+        @media screen and (max-width: 768px) {
+            .search-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+                padding: 15px;
+            }
+            .search-item {
+                border: none;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rcontainer">
+        <img class="background-image" src="https://img.freepik.com/premium-photo/red-sports-car-driving-through-tunnel-generative-ai_87646-24241.jpg?w=1060" alt="Background">
+        <div class="search-container">
+            <div class="search-item">
+                <span>From</span>
+                <span>Select City</span>
+            </div>
+            <div class="search-item">
+                <span>To</span>
+                <span>Select City</span>
+            </div>
+            <div class="search-item">
+                <span>Departure</span>
+                <span>11 Dec '24</span>
+            </div>
+            <div class="search-item">
+                <span>Return</span>
+                <span>13 Dec '24</span>
+            </div>
+            <div class="search-item">
+                <span>Passenger</span>
+                <span>1 Passenger</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

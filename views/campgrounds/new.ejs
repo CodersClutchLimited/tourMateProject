@@ -1,0 +1,85 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="campground[title]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="campground[location]" required>
+            </div>
+            <!-- Category selection -->
+            <div class="mb-3">
+                <label class="form-label" for="category">Category</label>
+                <select class="form-control" id="category" name="campground[category]" required>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category %>"><%= category %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Campground Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" placeholder="0.00" aria-label="price" aria-describedby="price-label" name="campground[price]" required>    
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="campground[description]" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <input type="number" class="form-control" id="guests" name="campground[guests]" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="bedrooms">Number of Bedrooms</label>
+                <input type="number" class="form-control" id="bedrooms" name="campground[bedrooms]" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="beds">Number of Beds</label>
+                <input type="number" class="form-control" id="beds" name="campground[beds]" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="bathrooms">Number of Bathrooms</label>
+                <input type="number" class="form-control" id="bathrooms" name="campground[bathrooms]" required>
+            </div>
+            <div class="form-group">
+                <label for="amenities">Amenities</label>
+                <div>
+                  <input type="checkbox" name="campground[amenities][]" value="Wi-Fi" id="wifi"> Wi-Fi<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Parking" id="parking"> Parking<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Pets Allowed" id="pets"> Pets Allowed<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Swimming Pool" id="pool"> Swimming Pool<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Air Conditioning" id="ac"> Air Conditioning<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Laundry" id="laundry"> Laundry<br>
+                  <input type="checkbox" name="campground[amenities][]" value="BBQ Area" id="bbq"> BBQ Area<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Fire Pits" id="firepits"> Fire Pits<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Hot Tub" id="hottub"> Hot Tub<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Gym" id="gym"> Gym<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Electric Hookups" id="electric"> Electric Hookups<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Water Hookups" id="water"> Water Hookups<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Showers" id="showers"> Showers<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Bathrooms" id="bathrooms"> Bathrooms<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Picnic Area" id="picnic"> Picnic Area<br>
+                  <input type="checkbox" name="campground[amenities][]" value="Playground" id="playground"> Playground<br>
+                </div>
+            </div>  
+            <div class="mb-3">
+                <label class="form-label" for="image">Add Image(s)</label>
+                <input type="file" class="form-control" id="image" name="image" multiple>
+                <label class="form-label" for="image"></label>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Campground</button>
+            </div>
+        </form>
+        <a href="/campgrounds"><b>Back</b></a>
+    </div>
+</div>
