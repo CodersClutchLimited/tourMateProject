@@ -26,6 +26,7 @@ video {
 }
 
 .hero-box {
+    height: 210px;
     z-index: 1;
     border-radius: 8px;
     background-color: #fff;
@@ -38,6 +39,7 @@ video {
 }
 
 .hero-div {
+    height: 100%;
     text-align: center;
     /* border-radius: 8px; */
     background: #ffffff;
