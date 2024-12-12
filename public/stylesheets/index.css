@@ -126,9 +126,9 @@ main{
     cursor: pointer;
     border-radius: 50%;
     border: 1px solid #bcb8b1;
-    width: 45px;
-    height: 45px;
-    font-size: 14px;
+    width: 43px;
+    height: 43px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,7 +144,7 @@ main{
     left: 0;
     background-color: white;
     color: #333;
-    margin-left: 4px;
+    margin-left: 2px;
 }
 
 
@@ -152,7 +152,7 @@ main{
     right: 0;
     background-color: white;
     color: #333;
-    margin-right: 4px;
+    margin-right: 2px;
 
 
 }
@@ -472,8 +472,8 @@ main{
     border: none;
     cursor: pointer;
     border-radius: 50%; /* Circular shape */
-    width: 42px; /* Fixed width */
-    height: 42px; /* Fixed height */
+    width: 41px; /* Fixed width */
+    height: 41px; /* Fixed height */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     display: flex;
     align-items: center;
@@ -481,7 +481,7 @@ main{
     transition: background-color 0.3s ease, opacity 0.3s ease;
     padding: 0; /* Remove padding */
     opacity: 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     visibility: hidden;
 }
 
@@ -521,8 +521,8 @@ main{
 
 .dot {
     display: inline-block;
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     margin: 0 5px;
     background-color: #ddd;
     border-radius: 50%;
