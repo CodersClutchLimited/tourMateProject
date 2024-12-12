@@ -182,7 +182,7 @@ input[type="text"] {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   /* 2 columns of equal width */
-  width: 70%;
+  width: 80%;
   /* Occupy 60% of the parent container */
   /* background-color: #ffffff; */
   gap: 150px;
@@ -237,7 +237,7 @@ input[type="text"] {
 }
 
 .section-title {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
@@ -258,21 +258,14 @@ input[type="text"] {
   border-bottom: 1px dashed grey;
   margin-right: 30px !important;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .browser .smally {
   border-bottom: 1px dashed grey;
   margin-right: 87px !important;
   cursor: pointer;
-  font-size: 17px;
-}
-.section-title-1{
-  padding-left: 97px;
-}
-
-.section-title-2{
-  padding-right: 97px;
+  font-size: 15px;
 }
 
 
@@ -356,7 +349,6 @@ input[type="text"] {
 .car-standard {
   color: #222;
   margin-bottom: 8px;
-  margin-left: 90px;
 }
 
 .car-tab {
@@ -395,6 +387,7 @@ input[type="text"] {
   overflow: hidden;
 }
 
+
 .container-3 {
   width: 90%;
   max-width: 1200px;
@@ -415,11 +408,11 @@ input[type="text"] {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  margin-right: 167px;
+  margin-right: 20px;
 }
 
 .car-titler{
-  margin-left: 88px;
+  margin-left: 30px;
 }
 
 .tab {
@@ -428,12 +421,12 @@ input[type="text"] {
   padding: 5px 10px;
   margin: 0 10px;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 15px;
   border-radius: 5px;
 }
 
 .car-container-2 .tab{
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .tab.active {
@@ -613,11 +606,10 @@ input[type="text"] {
 
 .stats-container {
   z-index: 50;
-  width: 80%;
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns when possible */
-  gap: 20px; /* Space between the items */
-  padding: 20px;
+  gap: 18px;
   color: #fff;
 }
 
@@ -701,8 +693,8 @@ padding-right: 5px;
   cursor: pointer;
   background-color: #fff;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -718,7 +710,7 @@ padding-right: 5px;
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
-  font-size: 20px;
+  font-size:15px;
   font-weight: bold;
 }
 
