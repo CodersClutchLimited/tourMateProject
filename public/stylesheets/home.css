@@ -26,7 +26,7 @@ video {
 }
 
 .hero-box {
-    height: 210px;
+    height: 215px;
     z-index: 1;
     border-radius: 8px;
     background-color: #fff;
@@ -102,7 +102,9 @@ video {
 /* holiday sectionn */
 
 .holiday {
-    padding: 13px;
+    padding: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     background-color: #fbfbfd;
     border-radius: 50px;
     width: 55%;
@@ -161,7 +163,7 @@ video {
 .button-outer{
     position: absolute;
     top: 63%;
-    left: 44%;
+    left: 45%;
 }
 
 /* offer section */
