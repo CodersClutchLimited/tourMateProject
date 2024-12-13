@@ -1,0 +1,365 @@
+.search {
+    width: 50rem !important;
+    /* margin-top: 1rem; */
+    padding-top: 1rem;
+    margin-left: 10rem;
+  
+  }
+  
+  .background-container {
+    margin-top: 3rem !important;
+    width: 400rem !important;
+  }
+  
+  
+  .laptop {
+    width: 25rem;
+    height: 25rem;
+    margin-top: -70px !important;
+  }
+  
+  .container {
+    width: 100vw;
+  }
+  
+  .box {
+    gap: 30px !important;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .icons {
+    transition: transform 0.3s ease;
+  }
+  
+  .icons:hover {
+    transform: scale(1.1);
+  }
+  
+  .main {
+    width: 95vw;
+    height: 67vh;
+    margin: 0 auto;
+  }
+  
+  .paper {
+    border-radius: 15px;
+  }
+  
+  .para {
+    margin-left: 60px;
+    bottom: 7%;
+  }
+  
+  .move {
+    margin-top: 120px;
+    background: #F7F7F7;
+  }
+  
+  .lister {
+    background: white;
+    height: 30rem;
+    width: 15rem;
+  }
+  
+  .main-title {
+    padding: 100px;
+  }
+  
+  .main-lister {
+    width: 90vw;
+    padding: 100px;
+    gap: 20rem;
+  
+  }
+  
+  
+  .listing-card {
+    height: 70vh;
+    width: 75vw;
+    background: #512875;
+    margin-bottom: 80px;
+    border-radius: 20px;
+    overflow: hidden;
+    gap: 5rem;
+  }
+  
+  .listing-card img {
+    max-width: 98%;
+    max-height: 100%;
+    object-fit: contain;
+    padding-top: 20px;
+  }
+  
+  .Feel {
+    left: 20%;
+    top: 50%;
+  }
+  
+  .cart {
+    left: 55%;
+    bottom: 10%;
+    height: 600px;
+    overflow: hidden;
+    width: 550px;
+    padding-top: 150px;
+  
+  }
+  
+  .micro {
+    overflow: hidden;
+    height: 80vh;
+  
+  }
+  
+  .micro img {
+    object-fit: contain;
+  }
+  
+  .Bephone {
+    margin-top: 7rem;
+    margin-left: 5rem;
+  }
+  
+  .adj {
+    width: 6rem;
+    height: 6rem;
+    background: #643E84;
+  }
+  
+  .be2 {
+    margin-top: 20px;
+  }
+  
+  .buy {
+    background-color: #00c8f0;
+    color: white;
+    padding: 10px 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .buy:hover {
+    background-color: #00b0d0;
+  }
+  
+  .buy:active {
+    background-color: #008fae;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+  }
+  
+  
+  .small-list {
+    width: 30%;
+  }
+  
+  
+  .becryp {
+    margin: 100px;
+  
+  }
+  
+  .diver {
+    width: 37vw;
+    height: 38vh;
+    left: 3%;
+    border-radius: 20px;
+    background: #F7F7F7;
+    overflow: hidden;
+  }
+  
+  .diver img {
+    max-width: 85%;
+    max-height: 90%;
+    object-fit: contain;
+    margin-left: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  
+  .diver-container {
+    margin-top: 35px;
+  }
+  
+  /* FEATURE STYLE */
+  .feature {
+    background: #F7F7F7;
+    width: 100vw;
+  }
+  
+  .feature-icon img {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .feature-icon img:hover {
+    transform: scale(1.1);
+  }
+  
+  .exclusive {
+    margin-top: 100px;
+  }
+  
+  /* TESTIMONIALS */
+  .testimonials {
+    margin-top: 100px;
+  }
+  
+  .testimonials-container {
+    padding: 150px 0;
+    width: 80vw;
+  }
+  
+  .testimonials-content {
+    flex-basis: 65%;
+    flex-grow: 1;
+  }
+  
+  .testimonials-mini {
+    flex-basis: 45%;
+    margin-left: 50px;
+    flex-grow: 1;
+  }
+  
+  .title {
+    color: #2A27E9; 
+  }
+  
+  .subheading {
+    color: #30353f; 
+  }
+  
+  .description {
+    color: #737780; 
+  }
+  
+  @media (max-width: 1024px) {
+    .testimonials-mini {
+        margin-left: 0;
+    }
+  }
+  
+  
+  /* NEWS LETTER  */
+  .news {
+    height: 35rem;
+    margin-bottom: 100px;
+  
+  }
+  
+  .discount {
+    padding:100px;
+    padding-left:175px;
+    padding-right: 175px;
+  }
+  
+  .buttons {
+    padding-top: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .discount {
+        flex-direction: column;
+        gap: 4rem;
+    }
+  
+    .text-white {
+        width: 100%;
+        text-align: center;
+        color: black;
+    }
+  
+    .bg-white {
+        width: 100%;
+        padding: 2rem;
+    }
+  
+    .buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+  
+    .responsive-news {
+        background-image: none !important;
+    }
+  }
+  /* ============================================================================================================================================================================================================================================================================================================================================================================== */
+  
+  .menu-item a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Optional if you want the link itself to smoothly change color */
+  }
+  
+  .menu-item a span {
+    transition: color 0.3s ease;
+    /* Smooth text color transition */
+  }
+  
+  .menu-item a:hover span {
+    color: #120FBF;
+    /* Change text color to blue on hover */
+  }
+  
+  
+  
+  
+  .menu-item {
+    position: relative;
+    /* Ensure proper positioning context */
+  }
+  
+  
+  .mega-menu {
+    visibility: hidden;
+    /* Hide by default */
+    opacity: 0;
+    /* Make invisible initially */
+    position: absolute;
+    top: 100%;
+    /* Align below the menu item */
+    left: 0;
+    /* Align with the left of the viewport */
+    width: 100vw;
+    /* Make it span the entire viewport width */
+    background: white;
+    color: #000;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    /* Ensure it's above other elements */
+    margin-left: 0;
+    /* No left margin */
+    margin-right: 0;
+    /* No right margin */
+    box-sizing: border-box;
+    /* Ensure padding doesn’t affect width */
+    transition: visibility 0s, opacity 0.3s ease;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow columns to wrap */
+    justify-content: space-between;
+  }
+  
+  /* Flexbox layout for menu columns */
+  .mega-menu .menu-column {
+    flex: 1;
+    /* Allow columns to grow */
+    min-width: 150px;
+    /* Ensure columns don't shrink too much */
+    padding: 10px;
+  }
+  
+  /* Show the mega menu on hover */
+  .menu-item:hover .mega-menu {
+    visibility: visible;
+    /* Show the menu */
+    opacity: 1;
+    /* Make it fully opaque */
+  }
