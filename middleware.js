@@ -1,7 +1,8 @@
 const Campground = require('./models/campground');
-const { campgroundSchema, reviewSchema } = require('./schemas.js');
+const { campgroundSchema, reviewSchema, carSchema } = require('./schemas.js');
 const ExpressError = require('./Utils/ExpressError');
 const Review = require('./models/review');
+const Car = require('./models/car')
 
 module.exports.storeReturnTo = (req, res, next) => {
     if (req.session.returnTo) {
@@ -29,6 +30,16 @@ module.exports.validateCampground = (req, res, next) => {
     }
 }
 
+module.exports.validateCar = (req, res, next) => {
+    const {error} = carSchema.validate(req.body);
+    if(error){
+        const msg = error.details.map(el => el.message).join(',');
+        throw new ExpressError(msg, 400);
+    } else{
+        next()
+    }
+}
+
 module.exports.isAuthor = async (req, res, next) => {
     const { id } = req.params;
     const campground = await Campground.findById(id);
@@ -38,6 +49,17 @@ module.exports.isAuthor = async (req, res, next) => {
     }
     next();
 }
+
+module.exports.isCarAuthor = async (req, res, next) => {
+    const { id } = req.params;
+    const car = await Car.findById(id);
+    if (!car.author.equals(req.user._id)) {
+        req.flash('error', 'You do not have permission to do that.');
+        return res.redirect(`/cars/${id}`);
+    }
+    next();
+}
+
 
 module.exports.isReviewAuthor = async (req, res, next) => {
     const { id, reviewId } = req.params;

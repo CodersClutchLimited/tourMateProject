@@ -44,7 +44,7 @@ body {
 .hero-span {
   position: absolute;
   top: 54%;
-  left: 14%;
+  left: 13.5%;
   color: #fbfbfd;
   font-size: 1.5rem;
   padding-left: 7px;
@@ -521,7 +521,7 @@ input[type="text"] {
 
 .image img {
   width: 100%;
-  height: 100%; /* Set the height to match the container */
+  height: 100%;
   object-fit: cover;
   border-radius: 5px;
   display: block;
@@ -545,12 +545,13 @@ input[type="text"] {
 
 .card h3 {
   font-size: 18px;
-  padding-top: 10px;
+  padding-top: 5px;
+  color: #333;
 }
 
 .price {
   font-size: 16px;
-  padding-top: 10px;
+  padding-top: 5px;
   color: #32cd32;
   font-weight: bold;
 }
@@ -717,4 +718,34 @@ padding-right: 5px;
 
 .swiper-container {
   position: relative;
+}
+
+
+/* individual image carousel */
+.pagination-container {
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-line {
+  display: block;
+  width: 70px; /* Adjust width for desired line length */
+  height: 3px; /* Height of the control line */
+  background-color: #b3b3b3; /* Blue color */
+  margin: 0 5px; /* Space between the lines */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.pagination-line:hover {
+  background-color: #0056b3; /* Darker color on hover */
+  opacity: .5;
+  transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+/* Optional active state if needed */
+.pagination-line.active {
+  background-color: #0056b3; /* Highlight active control line */
+  opacity: .5;
 }

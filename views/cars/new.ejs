@@ -1,0 +1,186 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>Add a New Car</h1>
+<form action="/cars" method="POST" enctype="multipart/form-data">
+    <label for="name">Name</label>
+    <input type="text" name="car[name]" id="name" required />
+
+    <label for="body">Body</label>
+    <input type="text" name="car[body]" id="body" required />
+
+    <label for="make">Make</label>
+    <input type="text" name="car[make]" id="make" required />
+
+    <label for="model">Model</label>
+    <input type="text" name="car[model]" id="model" required />
+
+    <label for="transmission">Transmission</label>
+    <input type="text" name="car[transmission]" id="transmission" required />
+
+    <label for="fuelType">Fuel Type</label>
+    <input type="text" name="car[fuelType]" id="fuelType" required />
+
+    <label for="engine">Engine</label>
+    <input type="text" name="car[engine]" id="engine" required />
+
+    <label for="year">Year</label>
+    <input type="number" name="car[year]" id="year" required />
+
+    <label for="mileage">Mileage</label>
+    <input type="text" name="car[mileage]" id="mileage" required />
+
+    <label for="drive">Drive</label>
+    <input type="text" name="car[drive]" id="drive" required />
+
+    <label for="exteriorColor">Exterior Color</label>
+    <input type="text" name="car[exteriorColor]" id="exteriorColor" required />
+
+    <label for="interiorColor">Interior Color</label>
+    <input type="text" name="car[interiorColor]" id="interiorColor" required />
+
+    <label for="stockId">Stock ID</label>
+    <input type="text" name="car[stockId]" id="stockId" required />
+
+    <label for="vin">VIN</label>
+    <input type="text" name="car[vin]" id="vin" required />
+
+    <label for="price-original">Original Price</label>
+    <input type="number" name="car[price][original]" id="price-original" required />
+
+    <label for="price-msrp">MSRP</label>
+    <input type="number" name="car[price][msrp]" id="price-msrp" required />
+
+    <label for="sellerNote">Seller's Note</label>
+    <textarea name="car[sellerNote]" id="sellerNote" required></textarea>
+
+    <label for="location">Location</label>
+    <input type="text" name="car[location]" id="location" />
+
+    <!-- Comfort Features (Checkboxes) -->
+    <label>Comfort Features</label>
+    <label><input type="checkbox" name="car[features][comfort][]" value="A/C: Front" /> A/C: Front</label>
+    <label><input type="checkbox" name="car[features][comfort][]" value="Backup Camera" /> Backup Camera</label>
+    <label><input type="checkbox" name="car[features][comfort][]" value="Cruise Control" /> Cruise Control</label>
+    <label><input type="checkbox" name="car[features][comfort][]" value="Navigation" /> Navigation</label>
+
+    <!-- Entertainment Features (Checkboxes) -->
+    <label>Entertainment Features</label>
+    <label><input type="checkbox" name="car[features][entertainment][]" value="MP3 Player" /> MP3 Player</label>
+    <label><input type="checkbox" name="car[features][entertainment][]" value="Premium Audio" /> Premium Audio</label>
+    <label><input type="checkbox" name="car[features][entertainment][]" value="AM/FM Stereo" /> AM/FM Stereo</label>
+    <label><input type="checkbox" name="car[features][entertainment][]" value="DVD System" /> DVD System</label>
+
+    <!-- Safety Features (Checkboxes) -->
+    <label>Safety Features</label>
+    <label><input type="checkbox" name="car[features][safety][]" value="Airbag: Driver" /> Airbag: Driver</label>
+    <label><input type="checkbox" name="car[features][safety][]" value="Airbag: Passenger" /> Airbag: Passenger</label>
+    <label><input type="checkbox" name="car[features][safety][]" value="Security System" /> Security System</label>
+    <label><input type="checkbox" name="car[features][safety][]" value="Antilock Brakes" /> Antilock Brakes</label>
+
+    <!-- Seat Features (Checkboxes) -->
+    <label>Seat Features</label>
+    <label><input type="checkbox" name="car[features][seats][]" value="Heated Seats" /> Heated Seats</label>
+    <label><input type="checkbox" name="car[features][seats][]" value="Power Seats" /> Power Seats</label>
+    <label><input type="checkbox" name="car[features][seats][]" value="Bucket Seats" /> Bucket Seats</label>
+    <label><input type="checkbox" name="car[features][seats][]" value="Memory Seats" /> Memory Seats</label>
+
+    <!-- Usage Type (Dropdown) -->
+    <label for="usageType">Usage Type</label>
+    <select name="car[usageType]" id="usageType">
+        <option value="None" selected>None</option>
+        <option value="Rental">Rental</option>
+        <option value="Uber">Uber</option>
+        <option value="Both">Both</option>
+    </select>
+
+    <!-- Image Upload -->
+    <label for="images">Images</label>
+    <input type="file" name="images" id="images" multiple />
+
+    <button type="submit">Add Car</button>
+</form>
+
+
+<!-- <% layout('layouts/boilerplate') %>
+
+<h1>Add a New Car</h1>
+<form action="/cars" method="POST" enctype="multipart/form-data">
+    <label for="name">Name</label>
+    <input type="text" name="car[name]" id="name" required />
+
+    <label for="body">Body</label>
+    <input type="text" name="car[body]" id="body" required />
+
+    <label for="make">Make</label>
+    <input type="text" name="car[make]" id="make" required />
+
+    <label for="model">Model</label>
+    <input type="text" name="car[model]" id="model" required />
+
+    <label for="transmission">Transmission</label>
+    <input type="text" name="car[transmission]" id="transmission" required />
+
+    <label for="fuelType">Fuel Type</label>
+    <input type="text" name="car[fuelType]" id="fuelType" required />
+
+    <label for="engine">Engine</label>
+    <input type="text" name="car[engine]" id="engine" required />
+
+    <label for="year">Year</label>
+    <input type="number" name="car[year]" id="year" required />
+
+    <label for="mileage">Mileage</label>
+    <input type="text" name="car[mileage]" id="mileage" required />
+
+    <label for="drive">Drive</label>
+    <input type="text" name="car[drive]" id="drive" required />
+
+    <label for="exteriorColor">Exterior Color</label>
+    <input type="text" name="car[exteriorColor]" id="exteriorColor" required />
+
+    <label for="interiorColor">Interior Color</label>
+    <input type="text" name="car[interiorColor]" id="interiorColor" required />
+
+    <label for="stockId">Stock ID</label>
+    <input type="text" name="car[stockId]" id="stockId" required />
+
+    <label for="vin">VIN</label>
+    <input type="text" name="car[vin]" id="vin" required />
+
+    <label for="price-original">Original Price</label>
+    <input type="number" name="car[price][original]" id="price-original" required />
+
+    <label for="price-msrp">MSRP</label>
+    <input type="number" name="car[price][msrp]" id="price-msrp" required />
+
+    <label for="sellerNote">Seller's Note</label>
+    <textarea name="car[sellerNote]" id="sellerNote" required></textarea>
+
+    <label for="location">Location</label>
+    <input type="text" name="car[location]" id="location" />
+
+    <label for="features-comfort">Comfort Features</label>
+    <input type="text" name="car[features][comfort][]" id="features-comfort" />
+
+    <label for="features-entertainment">Entertainment Features</label>
+    <input type="text" name="car[features][entertainment][]" id="features-entertainment" />
+
+    <label for="features-safety">Safety Features</label>
+    <input type="text" name="car[features][safety][]" id="features-safety" />
+
+    <label for="features-seats">Seat Features</label>
+    <input type="text" name="car[features][seats][]" id="features-seats" />
+
+    <label for="usageType">Usage Type</label>
+    <select name="car[usageType]" id="usageType">
+        <option value="None" selected>None</option>
+        <option value="Rental">Rental</option>
+        <option value="Uber">Uber</option>
+        <option value="Both">Both</option>
+    </select>
+
+    <label for="images">Images</label>
+    <input type="file" name="images" id="images" multiple />
+
+    <button type="submit">Add Car</button>
+</form> -->
