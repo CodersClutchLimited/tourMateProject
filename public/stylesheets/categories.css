@@ -1,0 +1,30 @@
+.circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+}
+.stock {
+margin-top: 40px;
+}
+
+.feature-container {
+    width: 20vw;
+}
+
+.listing-container {
+    width: 80vw;
+    padding-left: 50px;
+}
+
+.padMe {
+    padding-left: 70px;
+}
+
+
+.card {
+    overflow: hidden;
+    background: #FFFFFF;
+    width:335px;
+    height: 450px;
+    border-radius: 15px;
+}

@@ -1,5 +1,6 @@
 const Campground = require('./models/campground');
-const { campgroundSchema, reviewSchema } = require('./schemas.js');
+const Product = require('./models/Product')
+const { campgroundSchema, reviewSchema, productSchema } = require('./schemas.js');
 const ExpressError = require('./Utils/ExpressError');
 const Review = require('./models/review');
 
@@ -28,6 +29,29 @@ module.exports.validateCampground = (req, res, next) => {
         next();
     }
 }
+
+
+module.exports.validateProduct = (req, res, next) => {
+    const { error } = productSchema.validate(req.body);
+    if (error) {
+        const msg = error.details.map(el => el.message).join(',');
+        throw new ExpressError(msg, 400);
+    } else {
+        next();
+    }
+
+}
+
+module.exports.isLister = async (req, res, next) => {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    if (!product.author.equals(req.user._id)) {
+        req.flash('error', 'You do not have permission to do that.');
+        return res.redirect(`/products/${id}`);
+    }
+    next();
+}
+
 
 module.exports.isAuthor = async (req, res, next) => {
     const { id } = req.params;

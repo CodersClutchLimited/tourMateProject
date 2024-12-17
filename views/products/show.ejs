@@ -1,0 +1,15 @@
+<!-- TESTING  -->
+
+
+<% layout('layouts/boilerplate') %>
+
+<link rel="stylesheet" href="/output.css">
+
+<div>
+    <p>Name: <%=product.name %></p>
+    <p>Category: <%=product.category %></p>
+    <p>Price: <%=product.price %></p>
+    <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="py-4 px-6 bg-blue-600 rounded-lg shadow-lg">Delete Product</button>
+    </form>
+</div>

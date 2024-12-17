@@ -44,7 +44,7 @@ const userRoutes = require('./routes/users')
 const campgroundRoutes = require('./routes/campgrounds');
 const reservationRoutes = require('./routes/reservations.js');
 const carRoutes = require('./routes/cars')
-const shopRoutes = require('./routes/shops')
+const productRoutes = require('./routes/Product')
 const tourRoutes = require('./routes/tours')
 const reviewRoutes = require('./routes/reviews');
 // const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
@@ -209,7 +209,7 @@ app.use('/campgrounds', campgroundRoutes)
 app.use('/reservations', reservationRoutes);
 app.use('/campgrounds/:id/reviews', reviewRoutes)
 app.use('/cars', carRoutes)
-app.use('/shops', shopRoutes)
+app.use('/products', productRoutes)
 app.use('/tours', tourRoutes)
 app.get('/', (req, res) => {
     //debugging steps to see if the route being accessed

@@ -57,3 +57,22 @@ module.exports.reviewSchema = Joi.object({
         body: Joi.string().required().escapeHTML()
     }).required()
 })
+
+
+
+module.exports.productSchema = Joi.object({
+    name: Joi.string().trim().required(),
+    description: Joi.string().trim().required(),
+    brand: Joi.string().trim().required(),
+    color: Joi.array().items(Joi.string().trim()).min(1).required(), // At least one color required
+    storageSize: Joi.string().trim().required(),
+    price: Joi.number().min(0).required(),
+    salePrice: Joi.number().min(0).allow(null), // Optional sale price (can be null)
+    quantity: Joi.number().min(0).required(),
+    sku: Joi.string().trim().required(),
+    tags: Joi.array().items(Joi.string().trim()).default([]), // Optional tags (defaults to empty array)
+    category: Joi.string()
+        .valid('computers', 'smartphones', 'watches', 'tv', 'tablets', 'gaming')
+        .required(), // Single category value
+    deleteImages: Joi.array().items(Joi.string().trim()).optional() // Optional array of image URLs or paths
+});
