@@ -1,67 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just testing</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .parallax {
-            position: relative;
-            height: 100vh;
-            /* Full viewport height */
-            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230703/pngtree-sleek-futuristic-car-in-a-vibrant-neon-metropolis-of-the-future-image_3756103.jpg');
-            /* Replace with your image */
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            /* Transparent background */
-            border-radius: 10px;
-        }
-
-        .regular-section {
-            height: 100vh;
-            /* Full viewport height */
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-    </style>
+    <meta name="viewport" content="width=b, initial-scale=1.0">
+    <title>Product listing form</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-    <div class="parallax">
-        <div class="content">
-            <h1>Welcome to My Website</h1>
-            <p>Scroll down to see the effect!</p>
+    <section class="section-1">
+        <div class="vin-container">
+            <hr>
+            <h1>Build Your Ad</h1>
+            <p class="required-not">You are currently building a Free Ad.</p>
+            <p class="required">Items marked with * are required fields.</p>
+            <hr>
+            <p class="vin-p">Enter your VIN to Import vehicle details</p>
+            <div class="vin-section">
+                <input class="vincent" type="text" placeholder="Enter VIN....">
+                <button>APPLY</button>
+            </div>
+            <hr>
         </div>
-    </div>
-    <div class="regular-section">
-        <p>Here’s some more content below the parallax section.</p>
-    </div>
+    </section>
 
-    <script>
-        window.addEventListener('scroll', function () {
-            const parallax = document.querySelector('.parallax');
-            let offset = window.pageYOffset;
-            parallax.style.backgroundPositionY = offset * 0.7 + 'px'; // Adjust the speed
-        });
+    <section class="section-2">
+        <div class="listing-container">
+            <h1 class="lister-title">LISTING ITEM DETAILS</h1>
+            <div class="form-section">
+                <div class="section-spacer">
+                    <label for="make">Make*</label>
+                    <select id="make">
+                        <option>Select Make</option>
+                    </select>
+                </div>
+                <div class="section-spacer">
+                    <label for="model">Model*</label>
+                    <select id="model">
+                        <option>Select Model</option>
+                    </select>
+                </div>
+                <div class="section-spacer">
+                    <label for="body">Body*</label>
+                    <select id="body">
+                        <option>Select Body</option>
+                    </select>
+                </div>
+                <div class="section-spacer">
+                    <label for="year">Year*</label>
+                    <select id="year">
+                        <option>Select Year</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group first-form-group">
+                <div class="spacer-class">
+                    <label for="transmission"><span class="icon"><i class="fa-solid fa-gears"></i></span>Transmission</label>
+                    <select class="transmission" id="transmission">
+                        <option>Select Transmission</option>
+                    </select>
+                </div>
+                <div class="spacer-class">
+                    <label for="fuel"><span class="icon"><i class="fa-solid fa-gas-pump"></i></span>Fuel type</label>
+                    <select class="fuel" id="fuel">
+                        <option>Select Fuel type</option>
+                    </select>
+                </div>
+                <div class="spacer-class">
+                    <label for="engine"><span class="icon"><i class="fa-solid fa-gear"></i></span>Engine</label>
+                    <input class="engine" type="text" id="engine" placeholder="Enter Engine">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="spacer-class">
+                    <label for="mileage"><span class="icon"><i class="fa-solid fa-road"></i></span>Mileage</label>
+                    <input class="mileage" type="text" id="mileage" placeholder="Enter Mileage (mi)">
+                </div>
+                <div class="spacer-class">
+                    <label for="drive"><span class="icon"><i class="ri-steering-2-fill"></i></i></span>Drive</label>
+                    <select class="drive" id="drive">
+                        <option>Select Drive</option>
+                    </select>
+                </div>
+                <div class="spacer-class">
+                    <label for="exterior"><span class="icon"><i class="fa-solid fa-palette"></i></span>Exterior Color</label>
+                    <select class="ext" id="exterior">
+                        <option>Select Exterior Color</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="spacer-class">
+                    <label for="interior"><span class="icon"><i class="fa-solid fa-palette"></i></span> Interior Color</label>
+                    <select class="inti" id="interior">
+                        <option>Select Interior Color</option>
+                    </select>
+                </div>
+                <div class="spacer-class">
+                    <label for="date"><span class="icon"><i class="fa-solid fa-registered"></i></span>Registered</label>
+                    <input class="register" type="text" id="date" placeholder="Enter date">
+                </div>
+                <div class="spacer-class">
+                    <label for="vin"><span class="icon"><i class="fa-solid fa-barcode"></i></span>VIN</label>
+                    <input class="vin" type="text" id="vin" placeholder="Enter VIN">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="spacer-class">
+                    <label for="history"><span class="icon"><i class="fa-solid fa-clock-rotate-left"></i></span>History</label>
+                    <input class="history" type="text" id="history" placeholder="Vehicle History Report">
+                </div>
 
-    </script>
+                <div class="spacer-class last-spacer">
+                    <label class="location-label" for="location"><span class="icon"><i class="fa-sharp fa-solid fa-location-dot"></i></span>location</label>
+                    <input class="location" type="text" id="location" placeholder="Brufut, The Gambia">
+                </div>
+
+            </div>
+            <hr class="group-hr">
+        </div>
+    </section>
+
+    <section class="section-3">
+        <div class="feature-container">
+            <h2>SELECT YOUR LISTING FEATURES</h2>
+            <div class="features">
+                <!-- Comfort -->
+                <div class="feature-category">
+                    <h3>Comfort</h3>
+                    <ul>
+                        <li class="comfort"><input type="checkbox" id="ac-front"><label for="ac-front"> A/C: Front</label></li>
+                        <li class="comfort"><input type="checkbox" id="backup-camera"><label for="backup-camera"> Backup Camera</label></li>
+                        <li class="comfort"><input type="checkbox" id="cruise-control"><label for="cruise-control"> Cruise Control</label></li>
+                        <li class="comfort"><input type="checkbox" id="navigation"><label for="navigation"> Navigation</label></li>
+                    </ul>
+                </div>
+    
+                <!-- Entertainment -->
+                <div class="feature-category">
+                    <h3>Entertainment</h3>
+                    <ul>
+                        <li class="comfort"><input type="checkbox" id="mp3-player"><label for="mp3-player"> MP3 Player</label></li>
+                        <li class="comfort"><input type="checkbox" id="premium-audio"><label for="premium-audio"> Premium Audio</label></li>
+                        <li class="comfort"><input type="checkbox" id="amfm-stereo"><label for="amfm-stereo"> AM/FM Stereo</label></li>
+                        <li class="comfort"><input type="checkbox" id="dvd-system"><label for="dvd-system"> DVD System</label></li>
+                    </ul>
+                </div>
+    
+                <!-- Safety -->
+                <div class="feature-category">
+                    <h3>Safety</h3>
+                    <ul>
+                        <li class="comfort"><input type="checkbox" id="airbag-driver"><label for="airbag-driver"> Airbag: Driver</label></li>
+                        <li class="comfort"><input type="checkbox" id="airbag-passenger"><label for="airbag-passenger"> Airbag: Passenger</label></li>
+                        <li class="comfort"><input type="checkbox" id="security-system"><label for="security-system"> Security System</label></li>
+                        <li class="comfort"><input type="checkbox" id="antilock-brakes"><label for="antilock-brakes"> Antilock Brakes</label></li>
+                    </ul>
+                </div>
+    
+                <!-- Seats -->
+                <div class="feature-category">
+                    <h3>Seats</h3>
+                    <ul>
+                        <li class="comfort"><input type="checkbox" id="heated-seats"><label for="heated-seats"> Heated Seats</label></li>
+                        <li class="comfort"><input type="checkbox" id="power-seats"><label for="power-seats"> Power Seats</label></li>
+                        <li class="comfort"><input type="checkbox" id="bucket-seats"><label for="bucket-seats"> Bucket Seats</label></li>
+                        <li class="comfort"><input type="checkbox" id="memory-seats"><label for="memory-seats"> Memory Seats</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider"></div>
+    </section>
+
+    <section class="section-4">
+        <div class="upload-container">
+            <h2>UPLOAD PHOTO</h2>
+            <p class="big-one"> RECOMMENDATION & GUIDES</p>
+            <p class="small-man">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis convallis semper. Proin risus felis, mollis at augue non, tincidunt eleifend<br>ipsum.</p>
+            <p class="small-man">Recommended Image Resolution: 800 x 470 px or higher</p>
+            <p class="small-man">Pellentesque non lorem auctor sem commodo blandit. Vestibulum posuere sit amet mi quis luctus. Proin placerat purus metus, vel consequat tellus efficitur vel.</p>
+            <p class="small-man">User can upload up to 5 photos, but dealer can upload up to 10 photos.</p>
+            <p class="small-man">Elementum, in vulputate nunc maximus. Nulla egestas blandit laoreet. Nam egestas odio non nisi ullamcorper convallis. Sed eu consectetur orci.<br>Cras vulputate nisl sapien, vitae rhoncus est aliquet sit amet.</p>
+            <div class="image-upload-box">
+                <div>
+                    <i class="ri-camera-line"></i>
+                    <br>
+                    <span>ADD IMAGE</span>
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
+    </section>
+
+    <section class="section-5">
+        <div class="container">
+            <h2>ADD VIDEOS</h2>
+            <div class="video-section">
+                <div>
+                    <div class="video-label">Video link 1</div>
+                    <div class="video-input-container">
+                        <input type="text" class="video-input" placeholder="">
+                        <div class="video-add-button">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-text">
+                    <i class="ri-information-line"></i>
+                    <span>If you don’t have the videos handy, don’t worry. You can add or edit them after you <span class="span-spacer">complete your ad using the "Manage Your Ad" page.</span></span>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="index.js"></script>
 </body>
-
 </html>

@@ -50,6 +50,106 @@ module.exports.campgroundSchema = Joi.object({
     deleteImages: Joi.array()
 });
 
+module.exports.carSchema = Joi.object({
+    car: Joi.object({
+        name: Joi.string().required().escapeHTML(),
+        body: Joi.string().required().escapeHTML(),
+        location: Joi.string().required().escapeHTML(),
+        make: Joi.string().required().escapeHTML(),
+        model: Joi.string().required().escapeHTML(),
+        transmission: Joi.string().required().escapeHTML(),
+        fuelType: Joi.string().required().escapeHTML(),
+        engine: Joi.string().required(),
+        year: Joi.number().required(),
+        mileage: Joi.string().required(),
+        drive: Joi.string().required(),
+        exteriorColor: Joi.string().required(),
+        interiorColor: Joi.string().required(),
+        stockId: Joi.string().required(),
+        vin: Joi.string().required(),
+        usageType: Joi.string()
+            .valid('Rental', 'Uber', 'Both', 'None')
+            .default('None')
+            .escapeHTML(),
+        features: Joi.object({
+            comfort: Joi.array().items(
+                Joi.string()
+                    .valid('A/C: Front', 'Backup Camera', 'Cruise Control', 'Navigation')
+                    .escapeHTML()
+            ).default([]),
+            entertainment: Joi.array().items(
+                Joi.string()
+                    .valid('MP3 Player', 'Premium Audio', 'AM/FM Stereo', 'DVD System')
+                    .escapeHTML()
+            ).default([]),
+            safety: Joi.array().items(
+                Joi.string()
+                    .valid('Airbag: Driver', 'Airbag: Passenger', 'Security System', 'Antilock Brakes')
+                    .escapeHTML()
+            ).default([]),
+            seats: Joi.array().items(
+                Joi.string()
+                    .valid('Heated Seats', 'Power Seats', 'Bucket Seats', 'Memory Seats')
+                    .escapeHTML()
+            ).default([]),
+        }).default({
+            comfort: [],
+            entertainment: [],
+            safety: [],
+            seats: []
+        }),
+        price: Joi.object({
+            original: Joi.number().required(),
+            msrp: Joi.number().required()
+        }).required(),
+        sellerNote: Joi.string().required().escapeHTML()
+    }).required(),
+    deleteImages: Joi.array()
+});
+
+
+// module.exports.carSchema = Joi.object({
+//     car: Joi.object({
+//         name: Joi.string().required().escapeHTML(),
+//         body: Joi.string().required().escapeHTML(),
+//         location: Joi.string().required().escapeHTML(),
+//         make: Joi.string().required().escapeHTML(),
+//         model: Joi.string().required().escapeHTML(),
+//         transmission: Joi.string().required().escapeHTML(),
+//         fuelType: Joi.string().required().escapeHTML(),
+//         engine: Joi.string().required(),
+//         year: Joi.number().required(),
+//         mileage: Joi.string().required(),
+//         drive: Joi.string().required(),
+//         exteriorColor: Joi.string().required(),
+//         interiorColor: Joi.string().required(),
+//         stockId: Joi.string().required(),
+//         vin: Joi.string().required(),
+//         usageType: Joi.string()
+//             .valid('Rental', 'Uber', 'Both', 'None')
+//             .default('None')
+//             .escapeHTML(),
+//         features: Joi.object({
+//             comfort: Joi.array().items(Joi.string().escapeHTML()).default([]),
+//             entertainment: Joi.array().items(Joi.string().escapeHTML()).default([]),
+//             safety: Joi.array().items(Joi.string().escapeHTML()).default([]),
+//             seats: Joi.array().items(Joi.string().escapeHTML()).default([])
+//         }).default({
+//             comfort: [],
+//             entertainment: [],
+//             safety: [],
+//             seats: []
+//         }),
+//         price: Joi.object({
+//             original: Joi.number().required(),
+//             msrp: Joi.number().required()
+//         }).required(),
+//         sellerNote: Joi.string().required().escapeHTML()
+//     }).required(),
+//     deleteImages: Joi.array()
+// });
+
+
 
 module.exports.reviewSchema = Joi.object({
     review: Joi.object({

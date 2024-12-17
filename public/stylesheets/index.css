@@ -471,8 +471,8 @@ main{
     border: none;
     cursor: pointer;
     border-radius: 50%; /* Circular shape */
-    width: 38px; /* Fixed width */
-    height: 38px; /* Fixed height */
+    width: 36px; /* Fixed width */
+    height: 36px; /* Fixed height */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     display: flex;
     align-items: center;

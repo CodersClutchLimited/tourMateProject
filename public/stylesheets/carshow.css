@@ -24,10 +24,10 @@ body {
 .header {
     background-color: #27ae60;
     color: white;
-    padding: 15px;
+    padding: 10px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -39,22 +39,27 @@ body {
 
 .image-container img {
     width: 100%;
-    height: auto;
+}
+
+.parent-image{
+    height: 399px;
+    object-fit: cover;
 }
 
 .price-tag {
     position: absolute;
-    top: 65px;
-    left: 8px;
+    top: 75px;
+    left: 6px;
     background-color: #0abc0a;
     color: white;
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 8px 13px;
+    font-size: 14px;
+    font-weight: bold;
     border-radius: 4px;
 }
 
 .details {
-    padding: 80px;
+    padding: 50px;
     border-radius: 8px;
     max-width: 400px;
     margin: 0 auto;
@@ -67,15 +72,56 @@ body {
 
 .profile-info {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .profile-image img {
-    width: 120px;
-    height: 120px;
+    width: 115px;
+    height: 115px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
+}
+
+.btn {
+    width: 300px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 12px 17px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e; /* Darker green for hover */
+    transform: scale(1.05); /* Slight scale up effect */
+}
+
+.btn-message {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-message:hover {
+    background-color: #2980b9; /* Darker blue for hover */
+    transform: scale(1.05); /* Slight scale up effect */
+}
+
+.btn-offer {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-offer:hover {
+    background-color: #c0392b; /* Darker red for hover */
+    transform: scale(1.05); /* Slight scale up effect */
 }
 
 .contact-info {
@@ -90,7 +136,7 @@ body {
 }
 
 .location p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #555;
 }
 
@@ -108,8 +154,12 @@ body {
 }
 
 .profile-name p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #555;
+}
+
+.profile-name h1 {
+    font-size: 1.3rem;
 }
 
 .image-row {
@@ -121,6 +171,8 @@ body {
 
 .image-row img {
     width: 24%;
+    height: 125px;
+    object-fit: cover;
     /* Adjust for spacing */
 }
 
@@ -129,6 +181,7 @@ body {
     width: 80%;
     margin: 20px auto;
     overflow: hidden;
+    margin-top: -30px;
     display: flex;
     flex-wrap: wrap;
     gap: 80px;
@@ -155,18 +208,27 @@ body {
     justify-content: space-between;
 }
 
-.row-1-1,
+/* .row-1-1,
 .row-1-2,
 .row-1-3,
 .row-1-4 {
-    margin-bottom: 10px;
-}
+    margin-bottom: 5px;
+} */
 
 .dobo {
     display: flex;
     justify-content: space-between;
-    gap: 50px;
-    border-bottom: 1px solid #999;
+    gap: 30px;
+    width: 170px;
+    border-bottom: 1px solid #D9D9D9;
+    white-space: nowrap;
+    /* overflow: hidden;
+    padding-right: 4px; */
+}
+
+.tooltip {
+    cursor: pointer; /* Indicates the element is interactive */
+    text-decoration: none;
 }
 
 .dobo-5 {
@@ -175,14 +237,17 @@ body {
 
 .dobo .title {
     display: flex;
+    margin-top: 6px;
 }
 
 .dobo strong {
-    color: #333;
+    color: hsl(0, 0%, 20%);
+    font-size: .9rem;
 }
 
 .dobo .title {
     color: #777;
+    font-size: .8rem;
 }
 
 .image-descript {
@@ -192,7 +257,7 @@ body {
 
 .dobo i {
     color: #0abc0a;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .map-info {
@@ -221,26 +286,30 @@ body {
     flex: 1;
     position: relative;
     max-width: 50%;
-    border-bottom: 5px solid #777;
+    /* border-bottom: 5px solid #777; */
     padding-bottom: 30px;
 }
 
 .features-descript h2 {
     padding-left: 5px;
     color: #444;
+    font-size: 1.3rem;
 }
 
 .feature-section {
     display: inline-block;
     margin-right: 13px;
     vertical-align: top;
+    margin-top: -10px;
+    border-bottom: 5px solid #777;
+
 }
 
 .section-header {
     font-weight: bold;
     margin-bottom: -3px;
     padding-left: 5px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     color: #444;
 }
 
@@ -250,11 +319,12 @@ body {
 }
 
 .feature-list li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: .87rem;
 }
 
 .feature-list li i {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #0abc0a;
 }
 
@@ -266,14 +336,13 @@ body {
 
 .listing {
     display: flex;
-    margin-bottom: 50px;
     align-items: center;
     margin-bottom: 15px;
 }
 
 .listing img {
-    width: 150px;
-    height: 100px;
+    width: 140px;
+    height: 93px;
     margin-right: 20px;
 }
 
@@ -288,21 +357,26 @@ body {
 
 .car-details h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 13px;
     color: #444;
 }
 
 .car-details p {
     margin: 5px 0 0;
-    font-size: 16px;
-    color: #222;
+    font-size: 13px;
+    color: #444;
 }
+
+.car-details #namera{
+    color: #999;
+}
+
 
 .car-details-2 p {
     margin-top: -4px;
     font-weight: bold;
     color: #333;
-    font-size: 1.1rem;
+    font-size: .97rem;
     padding-top: 10px;
     padding-bottom: 3px;
 }
@@ -321,7 +395,6 @@ body {
 .pricer strong {
     background-color: #0abc0a;
     padding: 5px;
-
     margin-right: 10px;
     border-radius: 3px;
     color: #f9f9f9;
@@ -339,19 +412,25 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 80px;
+    margin-top: -140px;
 }
 
 
 .seller-descript {
     flex: 1;
     position: relative;
+    font-size: .9rem;
     max-width: 50%;
     padding-bottom: 30px;
+    padding-top: 10px;
 }
 
 .seller-container h2 {
+    font-size: 1.3rem;
     color: #444;
 }
+
+
 
 /* message dealer */
 .contacter {
@@ -372,7 +451,6 @@ body {
 }
 
 .form-container .inputs {
-    gap: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -380,11 +458,11 @@ body {
 }
 
 .seller-info {
-    border-top: 5px solid #888;
+    border-top: 5px solid #666;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40%;
+    width: 50%;
     background-color: white;
     flex-direction: column;
     text-align: center;
@@ -412,12 +490,12 @@ body {
 }
 
 .seller-info button {
-    margin-top: 20px;
-    padding: 10px 40px;
+    margin-top: 40px;
+    padding: 9px 39px;
     background-color: #fff;
     border: none;
     color: #444;
-    font-size: 1.1rem;
+    font-size: .6rem;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
@@ -439,11 +517,11 @@ body {
 .form-container {
     margin-bottom: 3px;
     margin-left: 9px;
-    width: 60%;
+    width: 65%;
 }
 
 .form-container .input-1 {
-    margin-left: 7px;
+    margin-left: 10px;
 }
 
 .form-container .input-1 label {
@@ -453,7 +531,7 @@ body {
 
 .form-container h2 {
     margin-top: -6px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #555;
 }
 
@@ -471,6 +549,11 @@ body {
     font-size: 14px;
 }
 
+.form-container .inputs{
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
 .form-container textarea {
     resize: none;
     height: 80px;
@@ -480,6 +563,7 @@ body {
     display: flex;
     align-items: center;
     margin-top: 15px;
+    font-size: 13px;
 }
 
 .form-container .policy input {
@@ -507,11 +591,12 @@ body {
 .search-results {
     width: 70%;
     border-top: 6px solid #0abc0a;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 120px auto;
+    height: 330px;
     overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     /* Adjust values as needed */
@@ -526,20 +611,20 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .search-results-header p {
-    padding-top: 30px;
+    padding-top: 15px;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #333;
-    margin-left: 80px;
+    margin-left: 20px;
 }
 
 .arrows {
     display: flex;
-    margin-right: 93px;
+    margin-right: 10px;
     margin-top: 12px;
 }
 
@@ -553,9 +638,9 @@ body {
     /* Centers the content horizontally */
     align-items: center;
     /* Centers the content vertically */
-    width: 45px;
+    width: 35px;
     /* Set a fixed width for the circle */
-    height: 45px;
+    height: 35px;
     /* Match height to width to form a circle */
     border-radius: 50%;
     /* Makes it a perfect circle */
@@ -577,11 +662,14 @@ body {
 
 .car-listings {
     display: flex;
+    gap: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .car-listing {
-    width: 270px;
-    margin-right: 20px;
+    width: 30%;
+    /* margin-right: 20px; */
     border-radius: 5px;
 }
 
@@ -591,7 +679,7 @@ body {
 
 .car-image img {
     width: 100%;
-    height: 170px;
+    height: 150px;
 }
 
 .special {
@@ -600,8 +688,9 @@ body {
     right: 10px;
     background-color: #0abc0a;
     color: white;
-    padding: 5px 10px;
+    padding: 4px 9px;
     border-radius: 5px;
+    font-size: .9rem;
 }
 
 .car-details h3 {

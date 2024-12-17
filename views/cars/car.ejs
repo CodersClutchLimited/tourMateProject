@@ -26,7 +26,6 @@
         <p class="hero-span font-semibold">Vehicle Available</p>
     </div>
 
-
     <div class="all-outer">
         <!-- Category Section -->
         <div class="rental-category-outer">
@@ -133,9 +132,6 @@
         </div>
     </div>
 
-
-
-
     <div class="browser-container">
         <div class="browser">
             <div class="browser-ce flex justify-between items-center">
@@ -239,14 +235,11 @@
         </div>
     </div>
 
-
     <!-- car listings section -->
-
-
     <div class="car-container">
         <div class="car-browser">
             <div class="car-titler flex flex-row items-center justify-center">
-                <div class="font-bold text-3xl car-standard">
+                <div class="font-bold text-2xl car-standard">
                     <h1><span>Car</span> Rental</h1>
 
                 </div>
@@ -264,8 +257,67 @@
             </div>
         </div>
         <div id="car-rent" class="container swiper-container">
-            <div class="cards swiper-wrapper">
-                <a href="/cars/show" class="card swiper-slide">
+            <div class="cards swiper-wrapper">                
+                <% cars.forEach(car => { %>
+                    <a href="/cars/<%= car._id %>" class="card swiper-slide">
+                        <div class="image carousel-images">
+                            <!-- Display up to 4 images in the carousel -->
+                                <% car.images.slice(0, 4).forEach((image, index) => { %>
+                                    <img src="<%= image.url %>" 
+                                         alt="<%= car.name %>" 
+                                         class="carousel-img" 
+                                         data-index="<%= index %>" 
+                                         style="<%= index !== 0 ? 'display:none;' : '' %>">
+                                <% }) %>
+                            <div class="badge special">SPECIAL</div>
+                        </div>
+                
+                        <!-- Dynamic Pagination Lines -->
+                        <div class="pagination-container">
+                            <% car.images.slice(0, 4).forEach((image, index) => { %>
+                                <span class="pagination-line <%= index === 0 ? 'active' : '' %>" 
+                                      data-target="<%= index %>"></span>
+                            <% }) %>
+                        </div>
+                
+                        <h3 class="font-semibold"><%= car.name %></h3>
+                        <p class="price">
+                            <% if (car.price.original > car.price.msrp) { %>
+                            <span class="original-price">$<%= car.price.original.toLocaleString() %></span>
+                            <% } %> 
+                            $<%= car.price.msrp.toLocaleString() %>
+                        </p>
+                        <div class="details">
+                            <span><%= car.transmission %> <i class="ri-settings-line"></i></span>
+                            <span><%= car.fuelType %> <i class="ri-dashboard-line"></i></span>
+                            <span><%= car.mileage %> mi <i class="ri-map-pin-line"></i></span>
+                        </div>
+                    </a>
+                <% }) %>
+                
+                
+                <!-- <% cars.forEach(car => { %>
+                    <a href="/cars/<%= car._id %>" class="card swiper-slide">
+                        <div class="image">
+                            <img src="<%= car.images.length > 0 ? car.images[0].url : '/default-image.jpg' %>" alt="<%= car.name %>">
+                            <div class="badge special">SPECIAL</div>
+                        </div>
+                        <h3 class="font-semibold"><%= car.name %></h3>
+                        <p class="price">
+                            <% if (car.price.original > car.price.msrp) { %>
+                            <span class="original-price">$<%= car.price.original.toLocaleString() %></span>
+                            <% } %> 
+                            $<%= car.price.msrp.toLocaleString() %>
+                        </p>
+                        <div class="details">
+                            <span><%= car.transmission %> <i class="ri-settings-line"></i></span>
+                            <span><%= car.fuelType %> <i class="ri-dashboard-line"></i></span>
+                            <span><%= car.mileage %> mi <i class="ri-map-pin-line"></i></span>
+                        </div>
+                    </a>
+                <% }) %> -->
+
+                <!-- <a href="/cars/show" class="card swiper-slide">
                     <div class="image">
                         <img src="https://img.freepik.com/free-photo/3d-car-with-vibrant-colors_23-2150797034.jpg?uid=R176520851&ga=GA1.1.438080985.1725988205&semt=ais_hybrid"
                             alt="BMW M5">
@@ -319,82 +371,7 @@
                         <span>9/12 <i class="ri-dashboard-line"></i></span>
                         <span>10 mi <i class="ri-map-pin-line"></i></span>
                     </div>
-                </a>
-                <a href="/cars/show" class="card swiper-slide">
-                    <div class="image">
-                        <img src="https://img.freepik.com/free-photo/futuristic-city-with-high-tech-mobility-social-welfare_23-2151065344.jpg?t=st=1733815387~exp=1733818987~hmac=7283a63ce72f20d2e6510931322ae1991caa7cbaabb040015a5a7ef82d97171e&w=996"
-                            alt="Lexus IS 250 C">
-                        <div class="badge special">SPECIAL</div>
-                    </div>
-                    <h3>New Lexus IS 250 C</h3>
-                    <p class="price">$35,000</p>
-                    <div class="details">
-                        <span>Automatic <i class="ri-settings-line"></i></span>
-                        <span>9/12 <i class="ri-dashboard-line"></i></span>
-                        <span>10 mi <i class="ri-map-pin-line"></i></span>
-                    </div>
-                </a>
-
-                <a href="/cars/show" class="card swiper-slide">
-                    <div class="image">
-                        <img src="https://img.freepik.com/free-photo/futuristic-city-with-high-tech-mobility-social-welfare_23-2151065344.jpg?t=st=1733815387~exp=1733818987~hmac=7283a63ce72f20d2e6510931322ae1991caa7cbaabb040015a5a7ef82d97171e&w=996"
-                            alt="Lexus IS 250 C">
-                        <div class="badge special">SPECIAL</div>
-                    </div>
-                    <h3>New Lexus IS 250 C</h3>
-                    <p class="price">$35,000</p>
-                    <div class="details">
-                        <span>Automatic <i class="ri-settings-line"></i></span>
-                        <span>9/12 <i class="ri-dashboard-line"></i></span>
-                        <span>10 mi <i class="ri-map-pin-line"></i></span>
-                    </div>
-                </a>
-
-                <a href="/cars/show" class="card swiper-slide">
-                    <div class="image">
-                        <img src="https://img.freepik.com/free-photo/futuristic-city-with-high-tech-mobility-social-welfare_23-2151065344.jpg?t=st=1733815387~exp=1733818987~hmac=7283a63ce72f20d2e6510931322ae1991caa7cbaabb040015a5a7ef82d97171e&w=996"
-                            alt="Lexus IS 250 C">
-                        <div class="badge special">SPECIAL</div>
-                    </div>
-                    <h3>New Lexus IS 250 C</h3>
-                    <p class="price">$35,000</p>
-                    <div class="details">
-                        <span>Automatic <i class="ri-settings-line"></i></span>
-                        <span>9/12 <i class="ri-dashboard-line"></i></span>
-                        <span>10 mi <i class="ri-map-pin-line"></i></span>
-                    </div>
-                </a>
-
-                <a href="/cars/show" class="card swiper-slide">
-                    <div class="image">
-                        <img src="https://img.freepik.com/free-photo/futuristic-city-with-high-tech-mobility-social-welfare_23-2151065344.jpg?t=st=1733815387~exp=1733818987~hmac=7283a63ce72f20d2e6510931322ae1991caa7cbaabb040015a5a7ef82d97171e&w=996"
-                            alt="Lexus IS 250 C">
-                        <div class="badge special">SPECIAL</div>
-                    </div>
-                    <h3>New Lexus IS 250 C</h3>
-                    <p class="price">$35,000</p>
-                    <div class="details">
-                        <span>Automatic <i class="ri-settings-line"></i></span>
-                        <span>9/12 <i class="ri-dashboard-line"></i></span>
-                        <span>10 mi <i class="ri-map-pin-line"></i></span>
-                    </div>
-                </a>
-
-                <a href="/cars/show" class="card swiper-slide">
-                    <div class="image">
-                        <img src="https://img.freepik.com/free-photo/futuristic-city-with-high-tech-mobility-social-welfare_23-2151065344.jpg?t=st=1733815387~exp=1733818987~hmac=7283a63ce72f20d2e6510931322ae1991caa7cbaabb040015a5a7ef82d97171e&w=996"
-                            alt="Lexus IS 250 C">
-                        <div class="badge special">SPECIAL</div>
-                    </div>
-                    <h3>New Lexus IS 250 C</h3>
-                    <p class="price">$35,000</p>
-                    <div class="details">
-                        <span>Automatic <i class="ri-settings-line"></i></span>
-                        <span>9/12 <i class="ri-dashboard-line"></i></span>
-                        <span>10 mi <i class="ri-map-pin-line"></i></span>
-                    </div>
-                </a>
-
+                </a> -->
             </div>
 
             <div class="swiper-button-next"></div>
@@ -405,7 +382,7 @@
     <div class="car-container-2">
         <div class="car-browser">
             <div class="car-titler flex flex-row items-center justify-center">
-                <div style="font-size: 1.5rem;" class="font-bold car-standard">
+                <div class="font-bold text-2xl car-standard">
                     <h1><span>Pickup</span> & Dropoff</h1>
 
                 </div>
@@ -464,62 +441,6 @@
                         <span>Semi-automatic <i class="ri-settings-line"></i></span>
                         <span>18/100 <i class="ri-dashboard-line"></i></span>
                         <span>20 mi <i class="ri-map-pin-line"></i></span>
-                    </div>
-                </a>
-                <a href="/cars/show" class="card swiper-slide">
-                    <div class="image">
-                        <img src="https://i.pinimg.com/originals/de/af/80/deaf80ea06dfeecdf7712ab3d8fe54c5.jpg"
-                            alt="Lexus IS 250 C">
-                        <div class="badge special">SPECIAL</div>
-                    </div>
-                    <h3>New Lexus IS 250 C</h3>
-                    <p class="price">$35,000</p>
-                    <div class="details">
-                        <span>Automatic <i class="ri-settings-line"></i></span>
-                        <span>9/12 <i class="ri-dashboard-line"></i></span>
-                        <span>10 mi <i class="ri-map-pin-line"></i></span>
-                    </div>
-                </a>
-                <a href="/cars/show" class="card swiper-slide">
-                    <div class="image">
-                        <img src="https://i.pinimg.com/originals/de/af/80/deaf80ea06dfeecdf7712ab3d8fe54c5.jpg"
-                            alt="Lexus IS 250 C">
-                        <div class="badge special">SPECIAL</div>
-                    </div>
-                    <h3>New Lexus IS 250 C</h3>
-                    <p class="price">$35,000</p>
-                    <div class="details">
-                        <span>Automatic <i class="ri-settings-line"></i></span>
-                        <span>9/12 <i class="ri-dashboard-line"></i></span>
-                        <span>10 mi <i class="ri-map-pin-line"></i></span>
-                    </div>
-                </a>
-                <a href="/cars/show" class="card swiper-slide">
-                    <div class="image">
-                        <img src="https://i.pinimg.com/originals/de/af/80/deaf80ea06dfeecdf7712ab3d8fe54c5.jpg"
-                            alt="Lexus IS 250 C">
-                        <div class="badge special">SPECIAL</div>
-                    </div>
-                    <h3>New Lexus IS 250 C</h3>
-                    <p class="price">$35,000</p>
-                    <div class="details">
-                        <span>Automatic <i class="ri-settings-line"></i></span>
-                        <span>9/12 <i class="ri-dashboard-line"></i></span>
-                        <span>10 mi <i class="ri-map-pin-line"></i></span>
-                    </div>
-                </a>
-                <a href="/cars/show" class="card swiper-slide">
-                    <div class="image">
-                        <img src="https://i.pinimg.com/originals/de/af/80/deaf80ea06dfeecdf7712ab3d8fe54c5.jpg"
-                            alt="Lexus IS 250 C">
-                        <div class="badge special">SPECIAL</div>
-                    </div>
-                    <h3>New Lexus IS 250 C</h3>
-                    <p class="price">$35,000</p>
-                    <div class="details">
-                        <span>Automatic <i class="ri-settings-line"></i></span>
-                        <span>9/12 <i class="ri-dashboard-line"></i></span>
-                        <span>10 mi <i class="ri-map-pin-line"></i></span>
                     </div>
                 </a>
                 <a href="/cars/show" class="card swiper-slide">
@@ -650,6 +571,7 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/javascripts/car.js"></script>
+    <script src="/javascripts/carCarousel.js"></script>
 </body>
 
 </html>
