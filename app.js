@@ -50,7 +50,8 @@ const reviewRoutes = require("./routes/reviews");
 // const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 const dbUrl =
   "mongodb+srv://kebbawaiga:Howareyoudoing1@eventmanagement.uwtft.mongodb.net/?retryWrites=true&w=majority&appName=EventManagement";
-mongoose.connect(dbUrl);
+// "mongodb+srv://Ousainou:Jammehbso1$@cluster0.cxpv1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// mongoose.connect(dbUrl);
 
 const connectDB = async () => {
   try {
@@ -62,7 +63,6 @@ const connectDB = async () => {
     process.exit(1); // 1 is failure, 0 status code is success
   }
 };
-
 connectDB();
 
 const db = mongoose.connection;

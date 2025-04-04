@@ -176,7 +176,6 @@ module.exports.showCampground = async (req, res) => {
     isHost,
   });
 };
-
 //edit page
 module.exports.renderEditForm = async (req, res) => {
   const { id } = req.params;
